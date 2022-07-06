@@ -1,0 +1,12 @@
+# https://projecteuler.net/problem=2
+
+def fib(n):
+   nums = []
+   a, b = 1, 2
+   for _ in range(n):
+      yield a
+      a, b = b, a + b
+      nums.extend([a, b])
+   return nums
+
+print(sum(list(filter(lambda x: x % 2 == 0 and x < 4000000, fib(32)))))
